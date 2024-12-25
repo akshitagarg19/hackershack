@@ -1,22 +1,20 @@
-# Documentation for Interactive Quiz Application
+# Documentation for Fun Facts About Hackers
 
 ## Introduction
-The Interactive Quiz Application is designed to provide a fun and engaging way to test knowledge on various topics. Users can answer questions and receive immediate feedback on their answers.
+This application provides a collection of fun facts about hackers, showcasing their history, culture, and impact on technology.
 
 ## File Structure
 - `index.html`: The main HTML file that contains the structure of the application.
-- `script.js`: The JavaScript file that handles the quiz logic.
+- `script.js`: The JavaScript file that handles any interactive functionality.
 - `style.css`: The CSS file that styles the application.
 - `README.md`: Overview and instructions for the project.
 - `docs.md`: Documentation for the project.
 
 ## How to Use
 1. Open `index.html` in a web browser.
-2. Read the question displayed on the screen.
-3. Enter your answer in the input field and click "Submit".
-4. Your score will be updated after each question.
+2. Read through the fun facts displayed on the page.
 
 ## Future Improvements
-- Add more questions to the quiz.
-- Implement a timer for each question.
-- Allow users to select categories for questions.
+- Add more facts about hackers.
+- Implement a quiz feature to test knowledge about hacking.
+- Allow users to submit their own fun facts.
