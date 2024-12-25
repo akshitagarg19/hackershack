@@ -1,5 +1,3 @@
-
-// Array of fun facts about hackers
 const facts = [
     { text: 'The term "hacker" originally referred to someone who makes furniture with an axe.', image: 'https://up.yimg.com/ib/th?id=OIP.axDGu0FS81c4Qwgx9wXC7wHaFE&pid=Api&rs=1&c=1&qlt=95&w=145&h=99' },
     { text: 'White hat hackers help organizations improve their security.', image: 'https://up.yimg.com/ib/th?id=OIP.PJd7lQKPXO2ankhNHp9m6AHaE0&pid=Api&rs=1&c=1&qlt=95&w=183&h=119' },
@@ -11,13 +9,33 @@ const facts = [
     { text: 'The dark web is often associated with illegal activities, including the sale of stolen data.', image: 'https://up.yimg.com/ib/th?id=OIP.TZVud3Pj77l11kPmmB8-8wHaFO&pid=Api&rs=1&c=1&qlt=95&w=145&h=102' },
 ];
 
-// Function to display a random fact with a background image
-function displayRandomFact() {
-    const randomIndex = Math.floor(Math.random() * facts.length);
-    const fact = facts[randomIndex];
+let currentFactIndex = 0;
+
+function displayFact() {
+    const fact = facts[currentFactIndex];
+    document.getElementById('facts-list').innerHTML = `<li>${fact.text}</li>`;
     
-    document.getElementById('facts-list').innerHTML = `<li style="background-image: ${fact.image};">${fact.text}</li>`;
+    const imgElement = document.getElementById('fact-image');
+    
+    // Fade out the image
+    imgElement.style.opacity = '0'; // Start fading out
+    setTimeout(() => {
+        imgElement.src = fact.image; // Change the image source
+        imgElement.style.display = 'block'; // Show the image
+        setTimeout(() => {
+            imgElement.style.opacity = '1'; // Fade in the new image
+        }, 50); // Small delay to ensure the image is loaded
+    }, 500); // Duration of the fade-out effect
 }
 
-// Call the function to display a random fact on page load
-displayRandomFact();
+function nextFact() {
+    currentFactIndex = (currentFactIndex + 1) % facts.length; // Loop back to the first fact
+    displayFact();
+}
+
+// Initial display
+displayFact();
+
+// Optional: Automatically change fact every few seconds
+setInterval(nextFact, 5000); // Change fact every 5 seconds
+
