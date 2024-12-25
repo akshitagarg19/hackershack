@@ -1,31 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fun Facts About Hackers</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>Fun Facts About Hackers</h1>
-    <div id="facts-container">
-        <p id="fact"></p>
-        <button onclick="generateFact()">Generate Fun Fact</button>
-    </div>
-    <script src="script.js"></script>
-    <div id="facts-container">
-        <img id="fact-image" src="" alt="Fact Image" style="width: 300px; height: auto; display: none;">
-        <ul id="facts-list">
-            <li>The term "hacker" originally referred to someone who makes furniture with an axe.</li>
-            <li>White hat hackers help organizations improve their security.</li>
-            <li>The first computer virus, "Creeper," was created in the early 1970s.</li>
-            <li>Many hackers use their skills for good, participating in hackathons for social causes.</li>
-            <li>Kevin Mitnick was once the most-wanted computer criminal in the U.S.</li>
-            <li>Hacktivism combines hacking with activism to promote political agendas.</li>
-            <li>Capture the Flag (CTF) competitions challenge participants to solve security-related puzzles.</li>
-            <li>The dark web is often associated with illegal activities, including the sale of stolen data.</li>
-        </ul>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
+// Array of fun facts about hackers
+const facts = [
+    { text: 'The term "hacker" originally referred to someone who makes furniture with an axe.', image: 'url_to_image1.jpg' },
+    { text: 'White hat hackers help organizations improve their security.', image: 'url_to_image2.jpg' },
+    { text: 'The first computer virus, "Creeper," was created in the early 1970s.', image: 'url_to_image3.jpg' },
+    { text: 'Many hackers use their skills for good, participating in hackathons for social causes.', image: 'url_to_image4.jpg' },
+    { text: 'Kevin Mitnick was once the most-wanted computer criminal in the U.S.', image: 'url_to_image5.jpg' },
+    { text: 'Hacktivism combines hacking with activism to promote political agendas.', image: 'url_to_image6.jpg' },
+    { text: 'Capture the Flag (CTF) competitions challenge participants to solve security-related puzzles.', image: 'url_to_image7.jpg' },
+    { text: 'The dark web is often associated with illegal activities, including the sale of stolen data.', image: 'url_to_image8.jpg' },
+];
+
+// Function to display a random fact with a background image
+function displayRandomFact() {
+    const randomIndex = Math.floor(Math.random() * facts.length);
+    const fact = facts[randomIndex];
+    
+    document.getElementById('facts-list').innerHTML = `<li style="background-image: ${fact.image};">${fact.text}</li>`;
+}
+
+// Call the function to display a random fact on page load
+displayRandomFact();
