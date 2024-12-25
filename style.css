@@ -1,7 +1,10 @@
 body {
     font-family: 'Merriweather', cursive; /* Fancy handwriting font */
     margin: 20px;
-    background-color: yellow; /* Set background color to yellow */
+    background-image: url('https://up.yimg.com/ib/th?id=OIP.XtlXmrujgxcWTyVw8iThMgHaE7&pid=Api&rs=1&c=1&qlt=95&w=162&h=107'); /* Set your background image */
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
     background-size: cover; /* Cover the entire background */
     color: white; /* Change font color to white */
     font-size: 18px;
