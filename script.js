@@ -9,33 +9,13 @@ const facts = [
     { text: 'The dark web is often associated with illegal activities, including the sale of stolen data.', image: 'https://up.yimg.com/ib/th?id=OIP.z1Fl9P5QfqFRfLuPS5GjQwHaFk&pid=Api&rs=1&c=1&qlt=95&w=141&h=106' },
 ];
 
-let currentFactIndex = 0;
-
-function displayFact() {
-    const fact = facts[currentFactIndex];
-    document.getElementById('facts-list').innerHTML = `<li>${fact.text}</li>`;
+// Function to display a random fact with a background image
+function displayRandomFact() {
+    const randomIndex = Math.floor(Math.random() * facts.length);
+    const fact = facts[randomIndex];
     
-    const imgElement = document.getElementById('fact-image');
-    
-    // Fade out the image
-    imgElement.style.opacity = '0'; // Start fading out
-    setTimeout(() => {
-        imgElement.src = fact.image; // Change the image source
-        imgElement.style.display = 'block'; // Show the image
-        setTimeout(() => {
-            imgElement.style.opacity = '1'; // Fade in the new image
-        }, 50); // Small delay to ensure the image is loaded
-    }, 500); // Duration of the fade-out effect
+    document.getElementById('facts-list').innerHTML = `<li style="background-image: ${fact.image};">${fact.text}</li>`;
 }
 
-function nextFact() {
-    currentFactIndex = (currentFactIndex + 1) % facts.length; // Loop back to the first fact
-    displayFact();
-}
-
-// Initial display
-displayFact();
-
-// Optional: Automatically change fact every few seconds
-setInterval(nextFact, 5000); // Change fact every 5 seconds
-
+// Call the function to display a random fact on page load
+displayRandomFact();
