@@ -5,10 +5,11 @@ body {
     background-size: cover; /* Cover the entire background */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Prevent the image from repeating */
+    color: white; /* Change font color to white */
 }
 
 h1 {
-    color: #333;
+    color: white;
 }
 
 #quiz {
