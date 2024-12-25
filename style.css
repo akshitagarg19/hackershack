@@ -1,10 +1,18 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Pacifico', cursive; /* Fancy handwriting font */
     margin: 20px;
+    background-color: yellow; /* Set background color to yellow */
+}
+
+h1 {
+    color: #333;
 }
 
 #quiz {
-    margin-top: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 input[type="text"] {
@@ -24,3 +32,5 @@ button {
 #score {
     margin-top: 10px;
 }
+
+/* Add Google Fonts link in your HTML head for the font */
